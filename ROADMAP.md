@@ -17,6 +17,12 @@ No README until the setup stabilises.
 
 ## Change log
 
+- 2026-08-17 — Overview type-to-launch made a preset default (`[shell]` in misc.toml; GUI
+  override pruned from settings.toml). Click-shield blur rule removed — no full-screen blur
+  behind panels (window-switcher blur stays). Detour note: shield inherits its panel's layer
+  (floating→overlay, attached/plugin→top), so per-group blur via `layer=` match is possible
+  if ever wanted; shield namespace itself is uniform.
+
 - 2026-08-17 — Blur behind open panels via niri layer-rule on `noctalia-panel-click-shield`
   (fullscreen shield surface). No dim: Noctalia has no scrim key, niri no dim effect —
   blur-only focus treatment. Git history wiped, repo re-committed fresh.
