@@ -1,5 +1,4 @@
-// Noctalia manages no niri config — every include below is user-owned.
-// Scaffold user/ from template/ (see README), then edit user/ freely.
+// Scaffold user/ from templates/ (see README), then edit user/ freely.
 
 include "user/autostart.kdl"
 include "user/binds.kdl"

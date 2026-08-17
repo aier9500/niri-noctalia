@@ -1,0 +1,26 @@
+// Noctalia writes no niri config; this file integrates Noctalia configs from this repo. 
+
+spawn-at-startup "noctalia"
+
+// Blurred backdrop wallpaper behind niri's overview (req: Noctalia [backdrop] enabled).
+layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+// Dynamic blur for noctalia shell surfaces (bar, notifications, panels, OSD).
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+        xray false
+    }
+}
+
+// Notification actions need activation despite invalid serials.
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+environment {
+    NOCTALIA_PAM_SERVICE "noctalia-lock"  // gaze unlock (pam_gaze + password fallback); needs /etc/pam.d/noctalia-lock
+}
