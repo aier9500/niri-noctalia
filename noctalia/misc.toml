@@ -73,3 +73,10 @@ action = "screen_off"
 timeout = 1200
 action = "suspend"
 lock_before_suspend = true
+
+# ==== Plugin Settings ====
+
+[plugin_settings."alexander/screen-toolkit"]
+panel_placement       = "attached"
+panel_position        = "auto"
+panel_open_near_click = true
