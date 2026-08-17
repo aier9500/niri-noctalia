@@ -22,7 +22,7 @@ session_placement              = "floating"
 session_position               = "center"
 
 [wallpaper]
-directory = "/home/aier/.dotfiles/niri-noctalia/wallpapers"
+directory = "~/.dotfiles/niri-noctalia/wallpapers"
 
 # Blurred backdrop feeds niri's overview (layer rule in niri/user/noctalia.kdl).
 [backdrop]
