@@ -1,5 +1,8 @@
-# Behaviour: launcher, nightlight schedule, battery, retention, lock, session actions.
-# Appearance keys live in theme.toml.
+#
+# Noctalia Behaviours
+# 
+
+# ==== Shell Behaviours ====
 
 [shell]
 niri_overview_type_to_launch_enabled = true
@@ -19,7 +22,11 @@ history_retention_hours = 168   # 7 days
 lock_before_suspend  = true
 allow_empty_password = true
 
-# Countdown guards to prevent fat fingering session controls. 
+
+# ==== Session Controls ====
+
+# Countdown guards to prevent fat fingering.
+
 [[shell.session.actions]]
 action   = "lock"
 shortcut = "1"
@@ -44,3 +51,25 @@ action   = "shutdown"
 shortcut = "5"
 variant  = "destructive"
 countdown_seconds = 3.0
+
+
+# ==== Idle ====
+
+# Lock 15m, screen off 30m, suspend 1h.
+
+[idle]
+behavior_order = ["lock", "screen-off", "suspend"]
+pre_action_fade_seconds = 5.0
+
+[idle.behavior.lock]
+timeout = 300
+action = "lock"
+
+[idle.behavior.screen-off]
+timeout = 600
+action = "screen_off"
+
+[idle.behavior.suspend]
+timeout = 1200
+action = "suspend"
+lock_before_suspend = true

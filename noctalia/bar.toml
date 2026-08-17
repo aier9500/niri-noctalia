@@ -1,6 +1,8 @@
 # Floating long-island bar: detached from the screen edge, near-full width.
-# Widgets sit in capsule pills; quick-settings cluster is one grouped pill
-# (icons only). Glass panel look lives in misc.toml [shell.panel].
+# Widgets sit in capsule pills; quick-settings cluster is one grouped pill.
+
+# These are just defaults, you can override them without changing this file
+# by using the Noctalia Settings GUI.
 
 [bar]
 order = ["default"]
@@ -9,8 +11,8 @@ order = ["default"]
 position             = "bottom"
 background_opacity   = 0.7
 scale                = 0.9  # no font-size key in beta.8; scales text + icons
-margin_edge          = 8    # gap from screen edge → island
-margin_ends          = 8    # uniform 8px gap all around
+margin_edge          = 8    
+margin_ends          = 8    
 concave_edge_corners = false
 
 capsule = true              # every widget in its own pill unless grouped
@@ -27,6 +29,9 @@ members = ["alexander/screen-toolkit:widget", "gabedunn/voxtype:status"]
 id      = "qs"
 members = ["network", "bluetooth", "volume", "brightness", "caffeine"]
 
+[widget.workspaces]
+show_labels = false
+
 [widget.taskbar]
 only_active_workspace = true
 
@@ -34,11 +39,10 @@ only_active_workspace = true
 hide_when_no_media = true
 title_scroll       = "on_hover"
 
-[widget.workspaces]
-show_labels = false         # dots, no numbers
-
-[widget.clock]
-format = "{:%Y-%m-%d · %H:%M}"
+[widget.battery]
+show_label    = true
+label_content = "percent"
+display_mode  = "graphic"
 
 # Quick-settings pill: icons only.
 [widget.network]
@@ -52,9 +56,7 @@ show_label = false
 
 [widget.brightness]
 show_label = false
+#############################
 
-[widget.battery]
-show_label    = true
-label_content = "percent"
-display_mode  = "graphic"
-# rate display deferred to the future power-control plugin (cardwire + ASUS)
+[widget.clock]
+format = "{:%Y-%m-%d · %H:%M}"
