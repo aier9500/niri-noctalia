@@ -16,16 +16,6 @@ layer-rule {
     }
 }
 
-// Blur the whole screen behind open panels (click-shield spans the output);
-// niri has no dim effect — blur only.
-layer-rule {
-    match namespace="^noctalia-panel-click-shield$"
-    background-effect {
-        blur true
-        xray false
-    }
-}
-
 layer-rule {
     match namespace="noctalia-window-switcher"
     background-effect {
