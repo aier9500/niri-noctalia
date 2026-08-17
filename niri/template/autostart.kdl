@@ -1,0 +1,4 @@
+// Personal: fcitx5
+
+spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"  // polkit prompts
+spawn-at-startup "fcitx5" "-d"  // IME (Rime/Cantonese) via input-method-v2

@@ -1,0 +1,28 @@
+// Personal: click-method "clickfinger", hyprland-style hover to focus & cursor jumps with keyboard focus
+
+input {
+    keyboard {
+        xkb {
+            // Empty -> inherits from localectl / org.freedesktop.locale1.
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        click-method "clickfinger"          // 1-finger click=left (anywhere), 2=right, 3=middle
+        tap-button-map "left-right-middle"  // 1-tap=left, 2=right, 3=middle
+        
+        natural-scroll
+        dwt              // disable-while-typing
+        // accel-speed 0.2
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+
+    // Hyprland-style: hover to focus & cursor jumps with keyboard focus
+    focus-follows-mouse max-scroll-amount="25%"
+    warp-mouse-to-focus
+}

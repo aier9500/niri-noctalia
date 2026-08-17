@@ -1,0 +1,16 @@
+// Personal: fcitx Xmodifier
+
+screenshot-path "~/Pictures/Screenshots/Screenshot From %Y-%m-%d %H-%M-%S.png"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+environment {
+    NOCTALIA_PAM_SERVICE "noctalia-lock"  // gaze unlock (pam_gaze + password fallback); needs /etc/pam.d/noctalia-lock
+    // Session runs on AMD iGPU (cardwire integrated). NVIDIA-offload apps set PRIME vars themselves.
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    QT_QPA_PLATFORM "wayland;xcb"
+    NIXOS_OZONE_WL "1"
+    XMODIFIERS "@im=fcitx"  // XWayland apps reach fcitx5 via XIM; native apps use text-input-v3
+}

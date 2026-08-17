@@ -1,0 +1,60 @@
+# Floating long-island bar: detached from the screen edge, near-full width.
+# Widgets sit in capsule pills; quick-settings cluster is one grouped pill
+# (icons only). Glass panel look lives in misc.toml [shell.panel].
+
+[bar]
+order = ["default"]
+
+[bar.default]
+position             = "bottom"
+background_opacity   = 0.7
+scale                = 0.9  # no font-size key in beta.8; scales text + icons
+margin_edge          = 8    # gap from screen edge → island
+margin_ends          = 8    # uniform 8px gap all around
+concave_edge_corners = false
+
+capsule = true              # every widget in its own pill unless grouped
+
+start  = ["workspaces", "taskbar"]
+center = ["media"]
+end    = ["tray", "group:utilities", "battery", "group:qs", "clock", "notifications"]
+
+[[bar.default.capsule_group]]
+id      = "utilities"
+members = ["alexander/screen-toolkit:widget", "gabedunn/voxtype:status"]
+
+[[bar.default.capsule_group]]
+id      = "qs"
+members = ["network", "bluetooth", "volume", "brightness", "caffeine"]
+
+[widget.taskbar]
+only_active_workspace = true
+
+[widget.media]
+hide_when_no_media = true
+title_scroll       = "on_hover"
+
+[widget.workspaces]
+show_labels = false         # dots, no numbers
+
+[widget.clock]
+format = "{:%Y-%m-%d · %H:%M}"
+
+# Quick-settings pill: icons only.
+[widget.network]
+show_label = false
+
+[widget.bluetooth]
+show_label = false
+
+[widget.volume]
+show_label = false
+
+[widget.brightness]
+show_label = false
+
+[widget.battery]
+show_label    = true
+label_content = "percent"
+display_mode  = "graphic"
+# rate display deferred to the future power-control plugin (cardwire + ASUS)

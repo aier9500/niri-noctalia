@@ -1,0 +1,48 @@
+// Noctalia shell integration. Noctalia writes no niri config; this file is the whole contract.
+
+spawn-at-startup "noctalia"
+
+// Blurred backdrop wallpaper behind niri's overview (Noctalia [backdrop] must be enabled).
+layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+// niri-composited blur behind shell surfaces (bar, notifications, panels, OSD).
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+        xray false
+    }
+}
+
+// Blur the whole screen behind open panels (click-shield spans the output);
+// niri has no dim effect — blur only.
+layer-rule {
+    match namespace="^noctalia-panel-click-shield$"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+// Settings window floats.
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+// Notification actions need activation despite invalid serials.
+debug {
+    honor-xdg-activation-with-invalid-serial
+}

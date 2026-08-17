@@ -1,0 +1,46 @@
+# Appearance: palette, fonts, panels, wallpaper, notifications, OSD.
+# Bar appearance stays in bar.toml (major component).
+
+[theme]
+mode             = "auto"
+source           = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+[shell]
+font_family = "IBM Plex Sans"
+time_format = "{:%H:%M}"
+
+# Quick-settings-triggered panels attach near their icon; everything else
+# floats centered (launcher/clipboard centered + control-center attached are
+# already the defaults).
+[shell.panel]
+transparency_mode              = "soft"   # glass made panels far more transparent than bar/OSD
+open_near_click_control_center = true
+wallpaper_placement            = "floating"
+wallpaper_position             = "center"
+session_placement              = "floating"
+session_position               = "center"
+
+[wallpaper]
+directory = "/home/aier/.dotfiles/niri-noctalia/wallpapers"
+
+# Blurred backdrop feeds niri's overview (layer rule in niri/user/noctalia.kdl).
+[backdrop]
+enabled        = true
+blur_intensity = 0.5
+tint_intensity = 0.0
+
+[notification]
+background_opacity = 0.7
+position           = "bottom_right"   # bar lives at the bottom
+
+[osd]
+position           = "bottom_center"
+position_vertical  = "bottom_center"
+background_opacity = 0.7
+
+[osd.kinds]
+media = false   # no toast on track change
+
+[lockscreen]
+tint_intensity = 0.0
