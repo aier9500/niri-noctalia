@@ -73,6 +73,27 @@ cp -rn "$repo/niri/templates/." "$repo/niri/user/"  # copy templates
 > [!TIP]
 > This repo's keyboard shortcuts live in `niri/user/binds.kdl` (reference in `SHORTCUTS.md`).
 
+### Power Control plugin (dGPU + battery charge limit)
+
+> [!NOTE] AI-use disclaimer `widget.luau` & `panel.luau`
+>
+> I have read through what the plugin backend does and have thoroughly tested this plugin on my machine, but it does not change that I have zero experience writing in Lua, so I used AI to build the plugin backend.
+>
+> I can guarantee that this plugin is not going to break your computer, but I cannot say that the code is the best out there.
+
+Requires `cardwire` and `asusctl` (ASUS laptops); skip on other machines.
+
+Bundled Noctalia plugin at `noctalia-plugins/power-control`:
+
+- dGPU sleep state on the bar
+- cardwire GPU mode switching
+- asusctl battery charge limit in a panel.
+
+```bash
+noctalia msg plugins source add aier9500 path ~/.dotfiles/niri-noctalia/noctalia-plugins
+noctalia msg plugins enable aier9500/power-control
+```
+
 ### Nvidia High VRAM Fix
 
 The Nvidia driver doesn't return freed VRAM to Niri, so Niri can hog ~1 GiB VRAM instead of ~100 MiB. The driver ships a fix profile it is not wired automatically for Niri (Smithay-based compositors), so we have to apply it ourselves.

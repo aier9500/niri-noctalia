@@ -19,7 +19,7 @@ capsule = true              # every widget in its own pill unless grouped
 
 start  = ["workspaces", "taskbar"]
 center = ["media"]
-end    = ["tray", "group:utilities", "battery", "group:qs", "clock", "notifications"]
+end    = ["tray", "group:utilities", "aier9500/power-control:widget", "battery", "group:qs", "clock", "notifications"]
 
 [[bar.default.capsule_group]]
 id      = "utilities"

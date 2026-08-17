@@ -1,0 +1,46 @@
+{
+  "settings": {
+    "pci_address": {
+      "label": "dGPU PCI address",
+      "description": "PCI address of the discrete GPU (e.g. 0000:64:00.0). Leave empty to auto-detect."
+    },
+    "poll_seconds": {
+      "label": "Poll interval",
+      "description": "Seconds between GPU/battery/cardwire polls."
+    },
+    "show_wattage": {
+      "label": "Show battery draw",
+      "description": "Show watts drawn from the battery while discharging."
+    },
+    "show_gpu_state": {
+      "label": "Show dGPU state",
+      "description": "Show the dGPU power state (D0 active, D3cold suspended) on the bar."
+    }
+  },
+  "panel": {
+    "title": "Power Control",
+    "gpu_section": "GPU",
+    "gpu_state": "State",
+    "gpu_runtime": "Runtime",
+    "gpu_idle": "Idle",
+    "gpu_active": "Active",
+    "cardwire_mode": "cardwire mode",
+    "no_cardwire": "cardwire not found",
+    "no_gpu": "No dGPU detected",
+    "battery_section": "Battery",
+    "bat_charging": "charging",
+    "bat_discharging": "discharging",
+    "bat_full": "fully charged",
+    "bat_not_charging": "not charging",
+    "power": "Power",
+    "health": "Health",
+    "charge_limit": "Charge limit",
+    "no_limit": "Charge limit not supported",
+    "no_battery": "No battery",
+    "oneshot": "Fully charge once",
+    "oneshot_sent": "Fully charging once; limit resumes after",
+    "oneshot_failed": "asusctl battery oneshot failed",
+    "mode_failed": "cardwire set {mode} failed",
+    "limit_failed": "asusctl battery limit failed"
+  }
+}
