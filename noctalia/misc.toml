@@ -1,8 +1,11 @@
-# Behavior: nightlight schedule, battery, retention, lock, session actions.
+# Behaviour: launcher, nightlight schedule, battery, retention, lock, session actions.
 # Appearance keys live in theme.toml.
 
+[shell]
+niri_overview_type_to_launch_enabled = true
+
 [nightlight]
-enabled           = true    # preset default; override per-machine after install
+enabled           = true
 temperature_day   = 6500
 temperature_night = 3500
 
@@ -16,8 +19,7 @@ history_retention_hours = 168   # 7 days
 lock_before_suspend  = true
 allow_empty_password = true
 
-# Full action array redeclared (overrides replace it whole); countdown guards
-# everything but lock against accidental clicks.
+# Countdown guards to prevent fat fingering session controls. 
 [[shell.session.actions]]
 action   = "lock"
 shortcut = "1"
