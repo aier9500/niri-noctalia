@@ -55,6 +55,7 @@ Alt-based, independent of the Mod layers.
 | Action                     | Bind    | Alt bind |
 | -------------------------- | ------- | -------- |
 | Toggle overview            | Mod+Tab |          |
+| Window switcher            | Alt+Tab |          |
 | Close window               | Mod+Q   | Alt+F4   |
 | Maximize column            | Mod+F   |          |
 | Toggle floating            | Mod+T   |          |
