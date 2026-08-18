@@ -20,7 +20,7 @@ session_position               = "center"
 [wallpaper]
 directory = "~/.dotfiles/niri-noctalia/wallpapers"
 
-# Blurred backdrop feeds niri's overview (layer rule in niri/user/noctalia.kdl).
+# Blurred backdrop feeds niri's overview (layer rule in niri/user/noctalia-integration.kdl).
 [backdrop]
 enabled        = true
 blur_intensity = 0.5
