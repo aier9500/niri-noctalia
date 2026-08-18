@@ -76,7 +76,7 @@ cp -rn "$repo/niri/templates/." "$repo/niri/user/"  # copy templates
 > - Orientation
 
 > [!TIP]
-> This repo's keyboard shortcuts live in `niri/user/binds.kdl` (reference in `SHORTCUTS.md`).
+> This repo's keyboard shortcuts live in `niri/user/binds.kdl`. `Mod+Shift+Slash` shows some of them on screen.
 
 ### Power Control plugin (dGPU + battery charge limit)
 
