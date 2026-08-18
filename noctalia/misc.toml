@@ -23,6 +23,19 @@ lock_before_suspend  = true
 allow_empty_password = true
 
 
+
+# ==== Services ====
+
+# Controlling external monitor brightness
+[brightness]
+enable_ddcutil = true
+
+# Nightlight schedules
+[location]
+custom_schedule = true
+sunrise = "05:30"
+sunset  = "18:00"
+
 # ==== Session Controls ====
 
 # Countdown guards to prevent fat fingering.
@@ -55,7 +68,7 @@ countdown_seconds = 3.0
 
 # ==== Idle ====
 
-# Lock 15m, screen off 30m, suspend 1h.
+# Lock 5m, screen off 10m, suspend 20m.
 
 [idle]
 behavior_order = ["lock", "screen-off", "suspend"]
@@ -74,7 +87,26 @@ timeout = 1200
 action = "suspend"
 lock_before_suspend = true
 
-# ==== Plugin Settings ====
+# ==== Plugins ====
+
+[plugins]
+enabled = ["noctalia/notes", "gabedunn/voxtype", "alexander/screen-toolkit", "aier9500/power-control"]
+
+[[plugins.source]]
+name     = "official"
+kind     = "git"
+location = "https://github.com/noctalia-dev/official-plugins"
+
+[[plugins.source]]
+name     = "community"
+kind     = "git"
+location = "https://github.com/noctalia-dev/community-plugins"
+
+# Plugins authored in this repo.
+[[plugins.source]]
+name     = "aier9500"
+kind     = "path"
+location = "~/.dotfiles/niri-noctalia/noctalia-plugins"
 
 [plugin_settings."alexander/screen-toolkit"]
 panel_placement       = "attached"

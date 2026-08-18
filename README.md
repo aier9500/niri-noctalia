@@ -101,11 +101,6 @@ Bundled Noctalia plugin at `noctalia-plugins/power-control`:
 - cardwire GPU mode switching
 - asusctl battery charge limit in a panel.
 
-```bash
-noctalia msg plugins source add aier9500 path ~/.dotfiles/niri-noctalia/noctalia-plugins
-noctalia msg plugins enable aier9500/power-control
-```
-
 ### Nvidia High VRAM Fix
 
 The Nvidia driver doesn't return freed VRAM to Niri, so Niri can hog ~1 GiB VRAM instead of ~100 MiB. The driver ships a fix profile it is not wired automatically for Niri (Smithay-based compositors), so we have to apply it ourselves.
