@@ -1,29 +1,48 @@
+// Debug (experimental) options
+// More info: https://github.com/niri-wm/niri/wiki/Configuration:-Debug-Options
 debug {
-    // Render compositor on iGPU (renderD128) in multi-GPU setups. 
-    // You can use cardwire to disable dGPU and list available devices. 
-    // 
-    // cardwire set integrated 
-    // ls -l /dev/dri/by-path/pci-*-render
-    // 
-    // The correct path is the one that is not crossed out (the one not
-    // highlighted in red).
+    // Problem: Niri lag
+    // Solution: Explicitly use iGPU for rendering Niri. 
     //
-    // Uncomment and set to your render node. Single-GPU machines can leave
-    // this commented out. 
+    // 1. `cardwire list` and find the RENDER for you iGPU
+    // 2. Uncomment the line below and replace "renderD128" with your path
+    //    if different. 
     //
     // ▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿
     // render-drm-device "/dev/dri/renderD128"
 
-    // If you are experiencing flickering / artifacts in a dGPU + iGPU 
-    // setup, you can: 
-    //     1. (Recommended for laptops) Render on iGPU and use the flag below
-    //        to tell Niri to wait for frames to finish rendering before
-    //        displaying them. 
-    //         + Allows you to keep power usage low by using iGPU
-    //         - Introduces a latency (that you may or may not notice)
-    //     2. Render on dGPU only and ignore the flag below
+    // Problem: flickering / artifacts in dGPU + iGPU setup
+    // Solutions: 
+    //     1. (Recommended for laptops) Use the option below & set
+    //        `render-drm-device` to iGPU.
+    //         + Pro: Allows you to keep power usage low by using iGPU.
+    //         - Con: Introduces a latency (that you may or may not notice).
+    //     2. Ignore the option below and set `render-drm-device` to dGPU.
     //
     // ▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿▿
     // wait-for-frame-completion-before-queueing
 
 }
+
+
+// ==== Monitors ====
+// More info: https://github.com/niri-wm/niri/wiki/Configuration:-Outputs
+
+// Use `niri msg outputs` to see available display options.
+// 
+// Below is an example multi-monitor setup, laptop monitor centred
+// below the external monitor: 
+
+// Built-in 16" 4K@60
+// output "eDP-1" {
+//     mode "3840x2400@60.000"
+//     scale 2
+//     position x=320 y=1440
+// }
+
+// External 27" 3k@144
+// output "HDMI-A-1" {
+//     mode "2560x1440@143.999"
+//     scale 1
+//     position x=0 y=0
+// }

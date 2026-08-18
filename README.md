@@ -53,7 +53,7 @@ mv ~/.config/noctalia ~/.config/noctalia.bak
 > [!NOTE]
 > The repo supplies you with config templates in `niri/templates`. Use the code block below to create your editable copies at `niri/user` (gitignored).
 
-Symlinks repo Niri + Noctalia configs to `~/.config`. Creates local version of `niri/user/hardware.kdl` and `niri/user/binds.kdl`.
+Symlinks repo Niri + Noctalia configs to `~/.config`. Creates local version of `niri/user/*.kdl` from `niri/templates/*kdl`.
 
 ```bash
 repo=~/.dotfiles/niri-noctalia
@@ -63,12 +63,17 @@ ln -sfn "$repo/noctalia" ~/.config/noctalia  # symlink repo noctalia/ configs to
 cp -rn "$repo/niri/templates/." "$repo/niri/user/"  # copy templates
 ```
 
-> [!NOTE]
-> `hardware.kdl` ships with `render-drm-device` commented out.
+> [!IMPORTANT]
+> On Multi-GPU (e.g. laptop with dGPU) you might want to check `hardware.kdl` to specify Niri to use iGPU for rendering to avoid dGPU wake-up lag.
 >
-> On single-GPU machines, no modifications needed.
+> Single GPU (e.g. iGPU-only, dGPU w/ no iGPU) can safely ignore this note.
+
+> [!TIP]
+> For monitor configs, also see `hardware.kdl`.
 >
-> On Multi-GPU (e.g. laptop with dGPU) you might want to check `hardware.kdl`.
+> - Refresh rate.
+> - Multi monitor setup.
+> - Orientation
 
 > [!TIP]
 > This repo's keyboard shortcuts live in `niri/user/binds.kdl` (reference in `SHORTCUTS.md`).
