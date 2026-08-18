@@ -5,6 +5,9 @@ include "user/binds.kdl"
 include "user/inputs.kdl"
 include "user/hardware.kdl"
 include "user/misc.kdl"
-include "user/noctalia.kdl"
+include "user/noctalia-integration.kdl"
 include "user/theme.kdl"
 include "user/windowrules.kdl"
+
+// Wallpaper-derived colours written by Noctalia
+include "noctalia.kdl"

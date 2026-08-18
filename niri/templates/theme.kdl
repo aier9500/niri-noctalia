@@ -5,37 +5,18 @@ cursor {
     xcursor-size 24
 }
 
+// Geometry of Niri is defined here, colours are generated automagically by
+// noctalia.kdl
 layout {
     gaps 8
     background-color "transparent"
 
     border {
-        width 2    // inactive border, default colour is transparent
-        active-color   "#a5c8fe"
-        inactive-color "#8d9199"
-        urgent-color   "#ffb4ab"
+        width 3    // inactive border, default colour is transparent
     }
 
     focus-ring {
-        width 2    // active window border thickness
-        active-color   "#a5c8fe"
-        inactive-color "#8d9199"
-        urgent-color   "#ffb4ab"
-    }
-
-    // Static palette; a Noctalia colors_changed hook could regenerate it from the wallpaper.
-    shadow {
-        color "#00000070"
-    }
-
-    tab-indicator {
-        active-color   "#a5c8fe"
-        inactive-color "#8d9199"
-        urgent-color   "#ffb4ab"
-    }
-
-    insert-hint {
-        color "#a5c8fe80"
+        width 3    // active window border thickness
     }
 }
 
@@ -54,8 +35,6 @@ window-rule {
 recent-windows {
     highlight {
         corner-radius 8    // Alt+Tab highlight box rounding
-        active-color   "#214876"
-        urgent-color   "#ffb4ab"
     }
 }
 

@@ -22,5 +22,6 @@ debug {
 }
 
 environment {
+    QT_QPA_PLATFORMTHEME "qt6ct"  // routes Qt apps through qt6ct, which reads the generated palette
     NOCTALIA_PAM_SERVICE "noctalia-lock"  // gaze unlock (pam_gaze + password fallback); needs /etc/pam.d/noctalia-lock
 }

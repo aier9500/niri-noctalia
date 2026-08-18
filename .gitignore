@@ -3,3 +3,6 @@ niri/user/*
 
 # Personal dictionary, stays local, never commited
 voxtype/dictionary.txt
+
+# Noctalia writes niri colours here on every theme change
+niri/noctalia.kdl
