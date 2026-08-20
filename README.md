@@ -41,6 +41,20 @@ The repo's Niri config autostarts Noctalia in `niri/user/noctalia-integration.kd
 
 Relogin. (`Mod+Shift+E` to log out; Niri default)
 
+> [!WARNING]
+>
+> The repo preset comes with the `screen-toolkit` Noctalia plugin, and it **requires dependencies**, the block below installs required ones for advertised functionalities:
+>
+> ```bash
+> # enable copr repo for hyprland
+> sudo dnf copr enable lionheartp/Hyprland
+> sudo dnf install hyprland -y # this is for hyprctl
+> sudo dnf install wlroots -y # compositor support
+> sudo dnf install slurp grim hyprpicker tesseract tesseract-langpack-eng ImageMagick zbar curl jq ffmpeg ffprobe bc stat pkill xdg-open mpv gpu-screen-recorder -y
+> ```
+>
+> More info: https://noctalia.dev/plugins/community/screen-toolkit
+
 ### Backs up your current `~/.config/niri` and `~/.config/noctalia` to `.bak`
 
 **Run once / run only on non-symlink folders.** Running this on a symlinked folder would cause nesting.
