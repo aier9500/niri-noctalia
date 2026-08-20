@@ -1,14 +1,13 @@
 # Just some cool wallpapers
 
-Noctalia already reads this folder directly (`noctalia/wallpaper.toml`). To also have them in
-`~/Pictures`:
+To have this folder as easy access in `~/Pictures`:
 
 ```bash
 cp -rn ~/.dotfiles/niri-noctalia/wallpapers ~/Pictures/Wallpapers # copies folder, no override
 ```
 
-or
+... or
 
 ```bash
-ln -sin ~/.dotfiles/niri-noctalia/wallpapers ~/Pictures/Wallpapers # link folder
+ln -si ~/.dotfiles/niri-noctalia/wallpapers ~/Pictures/Wallpapers # link folder
 ```
