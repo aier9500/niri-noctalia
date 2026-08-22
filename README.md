@@ -111,6 +111,12 @@ fi
 >
 > I can guarantee that the plugins are not going to break your computer, but the code is most likely not the best you have seen.
 
+> [!NOTE] Reasoning behind making these plugins
+>
+> The Noctalia Official and Community Plugin repositories don't cover functionalities in these custom plugins, so I have been using these custom ones before there are more polished ones released by better engineers.
+>
+> They can be turned off and deleted in the Noctalia Settings.
+
 #### power-control
 
 Requires `cardwire` and `asusctl` (ASUS laptops); skip on other machines.
