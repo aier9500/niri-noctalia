@@ -90,7 +90,7 @@ lock_before_suspend = true
 # ==== Plugins ====
 
 [plugins]
-enabled = ["noctalia/notes", "gabedunn/voxtype", "alexander/screen-toolkit", "aier9500/power-control"]
+enabled = ["noctalia/notes", "gabedunn/voxtype", "alexander/screen-toolkit", "aier9500/power-control", "aier9500/char-picker"]
 
 [[plugins.source]]
 name     = "official"

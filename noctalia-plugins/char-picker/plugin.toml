@@ -1,0 +1,17 @@
+id           = "aier9500/char-picker"
+name         = "Character Picker"
+version      = "0.1.0"
+plugin_api   = 14
+author       = "aier9500"
+license      = "MIT"
+icon         = "typography"
+description  = "Search Unicode characters and emoji from the launcher; Enter copies to the clipboard."
+dependencies = []
+tags         = ["unicode", "emoji", "launcher"]
+
+[[launcher_provider]]
+id                       = "char"
+entry                    = "char.luau"
+prefix                   = "char"
+glyph                    = "typography"
+include_in_global_search = true

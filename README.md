@@ -99,13 +99,19 @@ fi
 > [!TIP]
 > This repo's keyboard shortcuts live in `niri/user/binds.kdl`. `Mod+Shift+Slash` shows some of them on screen.
 
-### Power Control plugin (dGPU + battery charge limit)
+### Custom Plugins
 
-> [!NOTE] AI-use disclaimer `widget.luau` & `panel.luau`
+> [!NOTE] AI-use disclaimer in plugin building
 >
-> I have read through what the plugin backend does and have thoroughly tested this plugin on my machine, but it does not change that I have zero experience writing in Lua, so I used AI to build the plugin backend.
+> `.luau` files are completely AI-generated.
 >
-> I can guarantee that this plugin is not going to break your computer, but I cannot say that the code is the best out there.
+> I audited the `.luau` files and have thoroughly tested plugins on my machine 3+ days, however, I have do not have experience writing Lua, so I can only tell you I understand the code at a structural level.
+>
+> Some other files such as the the char-picker `generator_db.py` may be AI-assisted, but I have confidently audited them.
+>
+> I can guarantee that the plugins are not going to break your computer, but the code is most likely not the best you have seen.
+
+#### power-control
 
 Requires `cardwire` and `asusctl` (ASUS laptops); skip on other machines.
 
@@ -114,6 +120,14 @@ Bundled Noctalia plugin at `noctalia-plugins/power-control`:
 - dGPU sleep state on the bar
 - cardwire GPU mode switching
 - asusctl battery charge limit in a panel.
+
+#### char-picker
+
+Find special characters and emoji you can't type (e.g. "→", "¥", "∬", "😂") via the launcher.
+
+1. Open the Noctalia launcher and type `/char` (or press `Mod+.`).
+2. Type what you're looking for: "dollar", "arrow", "pizza" or a code like `u+2192`.
+3. Press Enter on a result to copy.
 
 ### Nvidia High VRAM Fix
 
