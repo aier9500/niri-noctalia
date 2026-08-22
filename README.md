@@ -117,23 +117,16 @@ fi
 >
 > They can be turned off and deleted in the Noctalia Settings.
 
-#### power-control
+Click on link to read details.
 
-Requires `cardwire` and `asusctl` (ASUS laptops); skip on other machines.
-
-Bundled Noctalia plugin at `noctalia-plugins/power-control`:
-
-- dGPU sleep state on the bar
-- cardwire GPU mode switching
-- asusctl battery charge limit in a panel.
-
-#### char-picker
-
-Find special characters and emoji you can't type (e.g. "→", "¥", "∬", "😂") via the launcher.
-
-1. Open the Noctalia launcher and type `/char` (or press `Mod+.`).
-2. Type what you're looking for: "dollar", "arrow", "pizza" or a code like `u+2192`.
-3. Press Enter on a result to copy.
+- [power-control](./noctalia-plugins/power-control/README.md)
+  - Switch GPU mode and set battery charge limits.
+  - Requires `cardwire` and `asusctl` (skip `asusctl` on non-ASUS machines).
+- [char-picker](./noctalia-plugins/char-picker/README.md)
+  - Find special characters and emoji you can't type (e.g. "→", "¥", "∬", "😂") via the launcher.
+  - Open the Noctalia launcher and type `/char` (or just press `Mod+.`).
+- [window-rules](./noctalia-plugins/window-rules/README.md)
+  - `Mod+Shift+W` to write window rules.
 
 ### Nvidia High VRAM Fix
 

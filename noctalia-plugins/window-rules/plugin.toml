@@ -1,0 +1,19 @@
+id           = "aier9500/window-rules"
+name         = "Window Rules"
+version      = "1.0.0"
+plugin_api   = 22
+author       = "aier9500"
+license      = "MIT"
+icon         = "window"
+description  = "Edit niri window rules from a panel instead of hand-writing windowrules.kdl."
+dependencies = []
+tags         = ["niri", "window-rules", "panel"]
+
+[[panel]]
+id                     = "panel"
+entry                  = "panel.luau"
+placement              = "floating"
+width                  = 520
+height                 = 620
+keyboard_focus         = "on_demand"
+dismiss_on_outside_click = true
