@@ -34,7 +34,7 @@ binds {
     // recording and other screen tools
     Mod+Shift+R { spawn "noctalia" "msg" "plugin" "alexander/screen-toolkit:service" "all" "toggle"; }  
     // window rule panel
-    Mod+Shift+W { spawn "noctalia" "msg" "panel-toggle" "aier9500/window-rules:panel"; }  
+    Mod+Shift+W { spawn "noctalia" "msg" "panel-toggle" "aier9500/window-rules:panel"; }
 
     // === Session ===
     Ctrl+Alt+Delete { spawn "noctalia" "msg" "panel-toggle" "session"; }
@@ -63,7 +63,7 @@ binds {
     Mod+F { spawn "sh" "-c" "if niri msg -j focused-window | grep -q is_floating.:true; then niri msg action move-window-to-tiling; sleep 0.1; fi; niri msg action maximize-column"; }
     Mod+Shift+F { fullscreen-window; }
 
-    Mod+T { spawn "sh" "-c" "niri msg action toggle-window-floating; if niri msg -j focused-window | grep -q is_floating.:true; then niri msg action set-window-width 50%; niri msg action set-window-height 70%; niri msg action center-window; else niri msg action set-column-width 66.667%; sleep 0.1; niri msg action center-column; fi"; }
+    Mod+T { spawn "sh" "-c" "niri msg action toggle-window-floating; if niri msg -j focused-window | grep -q is_floating.:true; then niri msg action set-window-width 50%; niri msg action set-window-height 65%; niri msg action center-window; else niri msg action set-column-width 66.667%; sleep 0.1; niri msg action center-column; fi"; }
     Mod+Shift+T { switch-focus-between-floating-and-tiling; }
 
     // === Focus windows ===
