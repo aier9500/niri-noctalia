@@ -681,6 +681,11 @@ function M.serialize(segments)
   local parts = {}
   for _, seg in ipairs(segments) do
     if seg.kind == "rule" and seg.dirty then
+      -- regenerated text starts on its own line even after a file with no trailing newline
+      local prev = parts[#parts]
+      if prev and prev:sub(-1) ~= "\n" then
+        table.insert(parts, "\n")
+      end
       table.insert(parts, format_rule(seg))
     else
       table.insert(parts, seg.raw)
